@@ -30,6 +30,8 @@
       "@usecases/*": ["./src/usecases/*"],
       "@App/*": ["./src/App/*"],
       "@fb/*": ["./src/firebase/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@hooks/*": ["./src/hooks/*"],
     }
   },
   "include": ["src"]

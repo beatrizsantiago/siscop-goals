@@ -24,6 +24,8 @@ export default defineConfig({
       '@usecases': path.resolve(__dirname, 'src/usecases'),
       '@App': path.resolve(__dirname, 'src/App'),
       '@fb': path.resolve(__dirname, 'src/firebase'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
     },
   },
 })
