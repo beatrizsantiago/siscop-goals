@@ -188,7 +188,7 @@ const FormContainer = ({ handleClose }:Props) => {
                   />
                 </Grid>
                 <Grid size={{ xs: 12, md: 1 }}>
-                  <Box display={{ xs: 'flex', md: 'none' }} alignItems="flex-end" justifyContent="center" height="100%">
+                  <Box display={{ xs: 'flex', md: 'none' }} justifyContent="center">
                     <Button
                       color="error"
                       onClick={() => onDeleteItemClick(index)}
@@ -198,7 +198,7 @@ const FormContainer = ({ handleClose }:Props) => {
                       Excluir item
                     </Button>
                   </Box>
-                  <Box display={{ xs: 'none', md: 'flex' }}>
+                  <Box display={{ xs: 'none', md: 'flex' }} alignItems="flex-end" justifyContent="center" height="100%">
                     <IconButton
                       sx={{ color: 'error.main' }}
                       onClick={() => onDeleteItemClick(index)}
