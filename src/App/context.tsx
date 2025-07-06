@@ -51,7 +51,7 @@ const GoalProvider = ({ children }: GoalProviderProps) => {
         ...data,
       });
     } catch {
-      toast.error('Erro ao carregar mais vendas. Tente novamente mais tarde.');
+      toast.error('Erro ao carregar mais metas. Tente novamente mais tarde.');
     }
   }, [state.hasMore, state.lastDoc, state.loading]);
 
