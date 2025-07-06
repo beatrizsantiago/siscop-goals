@@ -1,7 +1,7 @@
 import { Box, Button, CircularProgress } from '@mui/material';
 
 import { useGoalContext } from '../context';
-import Sale from './components/Goal';
+import Goal from './components/Goal';
 
 const List = () => {
   const { state, getMoreGoals } = useGoalContext();
@@ -9,7 +9,7 @@ const List = () => {
   return (
     <Box>
       {state.goals.map((item) => (
-        <Sale key={item.id} goal={item} />
+        <Goal key={item.id} goal={item} />
       ))}
 
       {state.loading && (
