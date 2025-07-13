@@ -22,6 +22,10 @@
     "erasableSyntaxOnly": false,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
+    "types": [
+      "jest",
+      "node"
+    ],
     "paths": {
       "agro-core": [
         "./node_modules/agro-core/dist/index.d.ts"
@@ -34,5 +38,9 @@
       "@hooks/*": ["./src/hooks/*"],
     }
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "tests",
+    "**/*.d.ts"
+  ]
 }
