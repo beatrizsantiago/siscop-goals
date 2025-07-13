@@ -29,6 +29,7 @@ describe('FirebaseGoal', () => {
       'monthly',
       mockFarm,
       [{ product: mockProduct, amount: 10 }],
+      false,
       new Date('2023-01-01T00:00:00Z')
     );
 
@@ -47,6 +48,7 @@ describe('FirebaseGoal', () => {
           amount: 10,
         },
       ],
+      finished: false,
       created_at: mockGoal.created_at,
     });
 

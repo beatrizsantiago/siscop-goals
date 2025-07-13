@@ -14,6 +14,7 @@ const mockGoal = new Goal(
   'MONTHLY',
   new Farm('farm1', 'Test Farm', { _lat: 0, _long: 0 }, []),
   [{ product: new Product('p1', 'Corn', 2.5, 90), amount: 10 }],
+  false,
   new Date('2023-01-01')
 );
 
@@ -174,7 +175,7 @@ describe('GoalProvider', () => {
 
     await waitFor(() => {
       expect(toast.error).toHaveBeenCalledWith(
-        'Erro ao carregar mais vendas. Tente novamente mais tarde.'
+        'Erro ao carregar mais metas. Tente novamente mais tarde.'
       );
     });
   });

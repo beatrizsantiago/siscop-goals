@@ -14,6 +14,7 @@ const mockGoal = new Goal(
     { product: new Product('p1', 'Tomato', 2, 30), amount: 10 },
     { product: new Product('p2', 'Lettuce', 1, 15), amount: 5 },
   ],
+  false,
   new Date('2023-01-01T10:30:00Z')
 );
 

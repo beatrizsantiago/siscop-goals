@@ -44,7 +44,7 @@ describe('FormContainer', () => {
   });
 
   it('should call AddGoalUseCase and dispatch on valid submit', async () => {
-    const mockGoal = new Goal('g1', 'MONTHLY', mockFarm, [], new Date());
+    const mockGoal = new Goal('g1', 'MONTHLY', mockFarm, [], false, new Date());
 
     (AddGoalUseCase as jest.Mock).mockImplementation(() => ({
       execute: jest.fn().mockResolvedValue(mockGoal),

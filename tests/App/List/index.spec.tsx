@@ -13,6 +13,7 @@ const mockGoal = new Goal(
   'MONTHLY',
   new Farm('farm1', 'Test Farm', { _lat: 0, _long: 0 }, []),
   [{ product: new Product('p1', 'Tomato', 2, 30), amount: 10 }],
+  false,
   new Date()
 );
 
