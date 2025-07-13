@@ -17,6 +17,7 @@ export default defineConfig({
   ],
   server: {
     port: 3006,
+    cors: true
   },
   resolve: {
     alias: {
@@ -27,5 +28,8 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, 'src/utils'),
       '@hooks': path.resolve(__dirname, 'src/hooks'),
     },
+  },
+  build: {
+    target: 'esnext',
   },
 })
