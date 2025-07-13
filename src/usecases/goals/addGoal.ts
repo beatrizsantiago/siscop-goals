@@ -21,6 +21,7 @@ class AddGoalUseCase {
       params.kind.trim().toUpperCase(),
       params.farm,
       params.items,
+      false,
       new Date()
     );
   

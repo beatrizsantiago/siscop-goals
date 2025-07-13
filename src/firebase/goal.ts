@@ -20,6 +20,7 @@ class FirebaseGoal implements GoalRepository {
         product_id: doc(firestore, 'products', item.product.id),
         amount: item.amount,
       })),
+      finished: false,
       created_at: Timestamp.fromDate(goal.created_at),
     });
 
@@ -28,6 +29,7 @@ class FirebaseGoal implements GoalRepository {
       goal.kind,
       goal.farm,
       goal.items,
+      false,
       goal.created_at,
     );
   }
@@ -88,6 +90,7 @@ class FirebaseGoal implements GoalRepository {
         data.kind,
         farm,
         items,
+        data.finished,
         data.created_at.toDate()
       );
     }));

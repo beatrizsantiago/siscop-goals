@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   Box, Paper, Typography, Collapse,
-  Divider, Grid, useTheme,
+  Divider, Grid, useTheme, Chip,
 } from '@mui/material';
 import { formatDate } from 'date-fns';
 import { GOAL_KINDS } from '@utils/goalKinds';
@@ -32,23 +32,40 @@ const GoalItem = ({ goal }:Props) => {
           width="100%"
           gap={1}
         >
-          <Typography fontWeight={500} color="textSecondary">
-            Meta de
-            {' '}
-            <span style={{ color: goal.kind == 'SALE' ? palette.blue.dark : palette.secondary.main }}>
-              <b>
-                {GOAL_KINDS[goal.kind]}
-              </b>
-            </span>
-            {' '}
-            da fazenda
-            {' '}
-            <span style={{ color: palette.primary.main }}>
-              <b>
-                {goal.farm.name}
-              </b>
-            </span>
-          </Typography>
+          <Box
+            display="flex"
+            alignItems={{ xs: 'flex-start', sm: 'center' }}
+            flexDirection={{ xs: 'column', sm: 'row' }}
+            gap={1}
+          >
+            {goal.finished && (
+              <Chip
+                label="Finalizada"
+                sx={{
+                  backgroundColor: 'secondary.dark',
+                  fontWeight: 'bold',
+                  color: '#fff',
+                }}
+              />
+            )}
+            <Typography fontWeight={500} color="textSecondary">
+              Meta de
+              {' '}
+              <span style={{ color: goal.kind == 'SALE' ? palette.blue.dark : palette.secondary.main }}>
+                <b>
+                  {GOAL_KINDS[goal.kind]}
+                </b>
+              </span>
+              {' '}
+              da fazenda
+              {' '}
+              <span style={{ color: palette.primary.main }}>
+                <b>
+                  {goal.farm.name}
+                </b>
+              </span>
+            </Typography>
+          </Box>
           <Typography
             variant="caption"
             color="textSecondary"
@@ -57,9 +74,11 @@ const GoalItem = ({ goal }:Props) => {
             {formatDate(goal.created_at, "dd/MM/yyyy 'às' HH:mm'h'")}
           </Typography>
         </Box>
-        <Box px={1}>
-          <DeleteButton goal={goal} />
-        </Box>
+        {!goal.finished && (
+          <Box px={1}>
+            <DeleteButton goal={goal} />
+          </Box>
+        )}
       </Box>
       
       <Collapse in={showDetails} unmountOnExit>
